@@ -1,0 +1,15 @@
+import requests
+from bs4 import BeautifulSoup
+import csv
+
+
+date = input("Please Enter a date in the following format MM/DD/YYYY: ")
+
+page = requests.get(f"https://www.yallakora.com/match-center?date={date}", timeout=10)
+
+"""Main Function"""
+def main(page) :
+    src = page.content
+    print(src)
+
+main(page)
